@@ -1,0 +1,413 @@
+/* ========================= */
+/* WebSec GPT Login CSS       */
+/* ========================= */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll / right-side space */
+}
+
+body {
+  background: linear-gradient(to right, #6366f1, #a855f7, #ef4444);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Container same as signup */
+.container {
+  height: 35em;
+  width: 32em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+/* Form same as signup */
+form {
+  width: 24em;
+  height: 24em;
+  background-color: #ffffff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: calc(50% + 5em);
+  left: 50%;
+  padding: 2em 3em 3em 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.75em;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+  color: #34495e;
+}
+
+/* Password label spacing */
+form label[for="password"] {
+  margin-top: 1em;
+}
+
+/* Inputs */
+form input {
+  font-size: 1em;
+  font-weight: 400;
+  color: #34495e;
+  padding: 0.4em;
+  border: none;
+  border-bottom: 0.15em solid #34495e;
+  outline: none;
+  background-color: #ffffff !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  appearance: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+form input::placeholder {
+  color: #7f8c8d;
+  opacity: 1;
+}
+
+/* Focus effect */
+form input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 0.15em solid transparent;
+  background-image: linear-gradient(to right, #6366f1, #a855f7, #ef4444);
+  background-position: 0 100%;
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  box-shadow: none !important;
+}
+
+/* Autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  background-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #34495e !important;
+}
+
+/* Button */
+form button {
+  font-size: 1em;
+  padding: 0.9em 0;
+  border-radius: 2em;
+  background-image: linear-gradient(to right, #6366f1, #a855f7, #ef4444);
+  color: white;
+  font-weight: 600;
+  margin-top: 1.5em;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+form button:hover {
+  opacity: 0.85;
+}
+
+/* Password wrapper & toggle */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  color: #1A1A1A;
+  cursor: pointer;
+  padding: 0.2em;
+}
+
+.toggle-password:hover {
+  opacity: 0.7;
+}
+
+/* Login link text */
+.login-link-text {
+  text-align: center;
+  margin-top: 0.8em;
+  margin-bottom: 0.2em;
+  font-size: 0.9em;
+  color: #7f8c8d;
+}
+
+/* Panda Styling (same as signup) */
+.panda-face {
+  height: 8em;
+  width: 9em;
+  background: #fff;
+  border: 0.2em solid #1A1A1A;
+  border-radius: 8em 8em 5.5em 5.5em;
+  position: absolute;
+  top: 2.5em;
+  left: 0;
+  right: 0;
+  margin: auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.904);
+}
+
+.ear-l,
+.ear-r {
+  background: #1A1A1A;
+  height: 2.8em;
+  width: 3em;
+  border-radius: 2.8em 2.8em 0 0;
+  position: absolute;
+  top: 1.8em;
+}
+
+.ear-l { left: 11em; transform: rotate(-38deg); }
+.ear-r { right: 11em; transform: rotate(38deg); }
+
+.blush-l,
+.blush-r {
+  background: #fab1a0;
+  height: 1.2em;
+  width: 1.5em;
+  border-radius: 50%;
+  position: absolute;
+  top: 4.5em;
+}
+
+.blush-l { left: 1.2em; transform: rotate(25deg); }
+.blush-r { right: 1.2em; transform: rotate(-25deg); }
+
+.eye-l,
+.eye-r {
+  background: #1A1A1A;
+  height: 2.3em;
+  width: 2.2em;
+  border-radius: 50%;
+  position: absolute;
+  top: 2.5em;
+}
+
+.eye-l { left: 1.5em; transform: rotate(-20deg); }
+.eye-r { right: 1.5em; transform: rotate(20deg); }
+
+.eyeball-l,
+.eyeball-r {
+  height: 0.7em;
+  width: 0.7em;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 0.6em;
+  top: 0.6em;
+  animation: blink 5s infinite ease-in-out;
+}
+
+@keyframes blink {
+  0%, 97%, 100% { height: 0.7em; }
+  98%, 99% { height: 0; }
+}
+
+.nose {
+  height: 1.2em;
+  width: 1.2em;
+  background: #1A1A1A;
+  position: absolute;
+  top: 5em;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: rotate(45deg);
+  border-radius: 1.5em 0 0 0.25em;
+}
+
+.nose:before {
+  content: "";
+  position: absolute;
+  background: #1A1A1A;
+  height: 0.6em;
+  width: 0.1em;
+  top: 0.85em;
+  left: 1.2em;
+  transform: rotate(-45deg);
+}
+
+.mouth {
+  top: 5.7em;
+  left: 3.3em;
+  height: 0.8em;
+  width: 0.95em;
+  border-radius: 50%;
+  box-shadow: 0 0.2em #1A1A1A;
+  position: absolute;
+}
+
+.mouth:before {
+  content: "";
+  position: absolute;
+  left: 0.9em;
+  height: 0.8em;
+  width: 0.95em;
+  border-radius: 50%;
+  box-shadow: 0 0.2em #1A1A1A;
+}
+
+.hand-l,
+.hand-r {
+  background: #1A1A1A;
+  height: 2.81em;
+  width: 2.6em;
+  position: absolute;
+  border-radius: 0.7em 0.7em 2.3em 2.3em;
+  top: 8.4em;
+}
+
+.hand-l { left: 7.5em; }
+.hand-r { right: 7.5em; }
+
+.paw-l,
+.paw-r {
+  background: #1A1A1A;
+  height: 3.5em;
+  width: 3.5em;
+  border-radius: 2.8em 2.8em 1.5em 1.5em;
+  position: absolute;
+  top: 33em;
+}
+
+.paw-l { left: 10.5em; }
+.paw-r { right: 10.5em; }
+
+.paw-l:before,
+.paw-r:before {
+  content: "";
+  background: #fff;
+  height: 1.5em;
+  width: 1.8em;
+  position: absolute;
+  top: 1.2em;
+  left: 0.6em;
+  border-radius: 1.6em 1.6em 0.7em 0.7em;
+}
+
+.paw-l:after,
+.paw-r:after {
+  content: "";
+  background: #fff;
+  height: 0.7em;
+  width: 0.7em;
+  position: absolute;
+  top: 0.8em;
+  left: 1.4em;
+  border-radius: 50%;
+  box-shadow: 0.85em 0 0 #fff, -0.85em 0 0 #fff;
+}
+
+/* Header Styling */
+.websec-header-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5rem;
+  background-color: #1A1A1A;
+  z-index: 998;
+}
+
+.websec-header-wrapper {
+  position: fixed;
+  top: 0.5em;
+  left: 0.7em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.websec-logo {
+  width: 2.3rem;
+  height: 2.3rem;
+  object-fit: contain;
+}
+
+.websec-gradient-title {
+  font-size: 2rem;
+  font-weight: 900;
+  background: linear-gradient(to right, #6366f1, #a855f7, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 768px) {
+  .container {
+    height: 36em;
+    top: 43%;
+  }
+
+  form {
+    height: 27em;
+    top: calc(49% + 6em);
+    padding: 3.5em 2em 3em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  form label,
+  form input,
+  .password-wrapper {
+    margin-bottom: 1em;
+  }
+
+  form button {
+    margin-top: 1em;
+  }
+
+  .login-link-text {
+    margin-top: 0.8em;
+    margin-bottom: 0.5em;
+  }
+
+  .paw-l, .paw-r {
+    top: 36em;
+  }
+
+  .panda-face {
+    top: 2.5em;
+  }
+
+  .forgot-password {
+    text-align: right;
+    margin-top: -1.4em;
+    margin-bottom: 1.2em;
+  }
+
+  .signup-link {
+    text-align: center;
+    font-size: 0.9em;
+    color: #535252ff;
+    margin-top: 0.8em;
+  }
+}
